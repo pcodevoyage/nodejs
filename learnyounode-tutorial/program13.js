@@ -11,13 +11,13 @@ function parsetime(time){
   }
 }
 
-function unix(time){
+function unixtime(time){
   return {
     unixtime : time.getTime()
   }
 }
 
-http.createServer(function(req,res){
+var server = http.createServer(function(req,res){
   var parseUrl = url.parse(req.url,true)
   var time = new Date(parseUrl.query.iso)
   var result
